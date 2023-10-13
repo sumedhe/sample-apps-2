@@ -9,19 +9,19 @@ listener asgardeo:Listener webhookListener =  new(config,httpListener);
 service asgardeo:UserOperationService on webhookListener {
   
     remote function onLockUser(asgardeo:GenericEvent event) returns error? {
-      //Not Implemented
+      log:printInfo("User locked: " + event.toString());
     }
     remote function onUnlockUser(asgardeo:GenericEvent event) returns error? {
-      //Not Implemented
+      log:printInfo("User Unlocked: " + event.toString());
     }
     remote function onUpdateUserCredentials(asgardeo:GenericEvent event) returns error? {
-      //Not Implemented
+      log:printInfo("User Update Credientials: " + event.toString());
     }
     remote function onDeleteUser(asgardeo:GenericEvent event) returns error? {
-      //Not Implemented
+      log:printInfo("User Delete: " + event.toString());
     }
     remote function onUpdateUserGroup(asgardeo:UserGroupUpdateEvent event) returns error? {
-      //Not Implemented
+      log:printInfo("User Update Group: " + event.toString());
     }
 }
 
